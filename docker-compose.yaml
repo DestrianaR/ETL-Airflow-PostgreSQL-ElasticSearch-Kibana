@@ -30,7 +30,7 @@ services:
     image: postgres:13
     container_name: postgres
     volumes:
-      - ./postgres_project_final:/var/lib/postgresql/data
+      - ./postgres:/var/lib/postgresql/data
     ports:
       - "5434:5432"
     healthcheck:
@@ -95,6 +95,7 @@ services:
       - elasticsearch-data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
+      
   kibana:
     container_name: kibana
     image: docker.elastic.co/kibana/kibana:7.4.0
